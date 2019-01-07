@@ -25,7 +25,12 @@ public class NewMain1 {
         em.getTransaction().begin();
         Bar bar=em.find(Bar.class, "Lendle");
         //add a new employee to the bar
-        
+        Employee e=new Employee();
+        e.setBar(bar);
+        e.setEmail("2");
+        e.setId("id3");
+        e.setName("bear");
+        em.persist(e);
         /////////////////////////////////
         em.getTransaction().commit();
         em.close();

@@ -26,7 +26,8 @@ public class NewMain3 {
         em.getTransaction().begin();
         //remove the newly created bar
         //////////////////////////////
-        
+        Bar bar=em.find(Bar.class, "xxx");
+        em.remove(bar);
         em.getTransaction().commit();
         em.close();
         System.exit(0);

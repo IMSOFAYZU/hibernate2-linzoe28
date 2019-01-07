@@ -25,7 +25,15 @@ public class NewMain2 {
         
         em.getTransaction().begin();
         //create a new bar, add employees to the new bar
+        Bar bar=new Bar();
+        bar.setName("xxx");
+        bar.setAddr("addr");
+        bar.setLicense("1232");
+        em.persist(bar);
         
+        Employee employee=new Employee("123","aaa","1235");
+        employee.setBar(bar);
+        em.persist(employee);
         ////////////////////////////////////////////////
         em.getTransaction().commit();
         em.close();
